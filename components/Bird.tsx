@@ -4,12 +4,11 @@ import { StyleSheet, View } from 'react-native';
 type Props = {
 	bottom: number;
 	left: number;
+	width: number;
+	height: number;
 };
 
-const Bird = ({ bottom, left }: Props) => {
-	const width = 70;
-	const height = 50;
-
+const Bird = ({ bottom, left, width, height }: Props) => {
 	return (
 		<View
 			style={[styles.root, { height, width, bottom, left: left - width / 2 }]}
