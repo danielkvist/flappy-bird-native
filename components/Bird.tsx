@@ -11,7 +11,10 @@ type Props = {
 const Bird = ({ bottom, left, width, height }: Props) => {
 	return (
 		<View
-			style={[styles.root, { height, width, bottom, left: left - width / 2 }]}
+			style={[
+				styles.root,
+				{ height, width, bottom: bottom - height / 2, left: left - width / 2 },
+			]}
 		></View>
 	);
 };

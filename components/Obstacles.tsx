@@ -2,19 +2,25 @@ import React from 'react';
 import { StyleSheet, View } from 'react-native';
 
 type Props = {
-	width: number;
+	bottom: number;
+	gap: number;
 	height: number;
 	left: number;
-	gap: number;
+	width: number;
 };
 
-const Obstacles = ({ width, height, left, gap }: Props) => {
+const Obstacles = ({ width, height, left, bottom, gap }: Props) => {
 	return (
 		<>
 			<View
-				style={[styles.root, { width, height, bottom: 0 + height + gap, left }]}
+				style={[
+					styles.root,
+					{ width, height, bottom: bottom + height + gap, left },
+				]}
 			></View>
-			<View style={[styles.root, { width, height, bottom: 0, left }]}></View>
+			<View
+				style={[styles.root, { width, height, bottom: bottom, left }]}
+			></View>
 		</>
 	);
 };
