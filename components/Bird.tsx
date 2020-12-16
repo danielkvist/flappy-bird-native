@@ -1,16 +1,26 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
 
-const Bird = () => {
-	return <View style={styles.root}></View>;
+type Props = {
+	bottom: number;
+	left: number;
+};
+
+const Bird = ({ bottom, left }: Props) => {
+	const width = 70;
+	const height = 50;
+
+	return (
+		<View
+			style={[styles.root, { height, width, bottom, left: left - width / 2 }]}
+		></View>
+	);
 };
 
 const styles = StyleSheet.create({
 	root: {
-		position: 'absolute',
 		backgroundColor: 'blue',
-		width: 70,
-		height: 50,
+		position: 'absolute',
 	},
 });
 
